@@ -1,11 +1,14 @@
 package cloud.autotests.tests;
 
 import cloud.autotests.helpers.DriverUtils;
+import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Description;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 import static cloud.autotests.helpers.TestData.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -142,8 +145,8 @@ public class GeneratedTests extends TestBase {
         });
         step("Press button languages", () -> {
             $(By.id("ember191")).click();
-            int i  = 0;
-            while ( i <  $$x("//li[@class='menu-item']").size()) {
+            int i = 0;
+            while (i < $$x("//li[@class='menu-item']").size()) {
                 $$x("//li[@class='menu-item']").get(i).click();
                 switch (i) {
                     case 0:
@@ -184,4 +187,57 @@ public class GeneratedTests extends TestBase {
             }
         });
     }
+
+    @Test()
+    @Description("User should find results")
+    @DisplayName("Search field")
+    void shouldFindResultsFromSearch() {
+        step("open 'https://stepik.org/'", () -> {
+            open("https://stepik.org/");
+        });
+        step("Input 'Java' in search field", () -> {
+            $(".search-form__input ").setValue("Java");
+            $(".search-form__submit").click();
+            $(".search-form__input ").sendKeys(Keys.ENTER);
+        });
+        step(" results with 'Java' are exist and visible and the first result contains Java", () -> {
+            $$(".course-cards__item").shouldHave(CollectionCondition.sizeGreaterThan(0));
+            String javaWord = "Java";
+            String text = String.format("Легкий старт в %s. Вводный курс для чайников", javaWord);
+            $$(".course-card__title").get(0).shouldHave(Condition.text(text));
+        });
+    }
+
+    @Test()
+    @Description("User should find results by filters")
+    @DisplayName("Search results by filters")
+    void shouldFindResultsByFilters() {
+        step("open 'https://stepik.org/'", () -> {
+            open("https://stepik.org/");
+        });
+        step("Choose filters: english language, with cert and Free", () -> {
+            $(".search-form__input ").setValue("Java");
+            $(".search-form__input ").sendKeys(Keys.ENTER);
+            $(".select-box__toggle-btn").click();
+            $$(".select-box__option").get(1).click();
+            $(byText("With certificate")).click();
+            $(byText("Free")).click();
+        });
+        step("Press 'Search' button", () -> {
+            $(".search-form__submit").click();
+        });
+        step(" results with 'Java' are exist and visible and the first result contains Java", () -> {
+            $$(".course-cards__item").shouldHave(CollectionCondition.sizeGreaterThan(0));
+            String javaWord = "Java";
+            String text = String.format("%s. Базовый курс", javaWord);
+            $$(".course-card__title").get(0).shouldHave(Condition.text(text));
+            String certificate  = $x("//div[@class='course-card__widgets'][1]//span[@data-type='certificate']")
+                    .getAttribute("aria-label");
+            String price = $$(".format-price_free").get(0).getText();
+            Assertions.assertEquals("This course issues a certificate", certificate);
+            Assertions.assertEquals("Free", price);
+        });
+    }
+
+
 }
