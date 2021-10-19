@@ -42,7 +42,6 @@ public class GeneratedTests extends TestBase {
                 open("https://stepik.org/"));
 
         step("Catalog - Stepik", () -> {
-            //  String expectedTitle = "Catalog · Stepik";
             String expectedTitle = "Catalog — Stepik";
             String actualTitle = title();
 
