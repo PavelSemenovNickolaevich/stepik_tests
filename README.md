@@ -55,10 +55,7 @@ IntelliJ IDEA, Java, Selenide, Selenoid, Gradle, JUnit5, Allure SE, Allure TestO
 - [X] - Регистрация пользователя
 - [X] - Logout с ЛК
 
-# USAGE examples
-
-### For run remote tests need fill remote.properties or to pass value:
-
+    
 * browser (default chrome)
 * browserVersion (default 89.0)
 * browserSize (default 1920x1080)
@@ -90,5 +87,31 @@ allure serve build/allure-results
 gradle clean demowebshop
 ```
 
-:heart: <a target="_blank" href="https://qa.guru">qa.guru</a><br/>
-:blue_heart: <a target="_blank" href="https://t.me/qa_automation">t.me/qa_automation</a>
+### Видео прохождения тестов, взятое из среды выполнения (из [**Selenoid**](https://selenoid.autotests.cloud/#/))
+![Selenoid](src/test/resources/files/test.gif)
+
+### Запуск в [**Jenkins**](https://jenkins.autotests.cloud/job/M2%20Tests/build?delay=0sec)
+Удобный и имеющий широкое комьюнити иснтрумент, просто для освоения в виду большого количества учебного материала также удобная настройка pipelines
+Статистика по запускам
+![Jenkins](src/test/resources/files/Jenkins1.bmp
+)
+Указание параметров для запуска
+![Jenkins](src/test/resources/files/Jenkins2.bmp)
+
+### Отчёт в Allure Report
+Инструмент, не нуждающийся в представлении и мгновенно завоеваший популярность против автоматически генерирующихся отчетов с тестовых фреймворков Junit4,5 и TestNG
+![Allure](src/test/resources/files/AllureReport.bmp)
+
+### Интеграция с TMS TestOps Allure
+Удобная интеграция с Test Management System  Allure TestOps (ранее Allure EE), где есть возможность
+хранить автотестовые прогоны с автоматическим заведением новых тест-кейсов из автоматизированных, так и создавать тест-кейсы вручную
+(такие тест-кейсы также могут быть автоматизированы и при прогоне уже отображаться как авто-тесты, это делается через простой плагин и внесение @Id для автотестов)
+- Автоматическая [**загрузка**](https://allure.autotests.cloud/project/279/launches) результата прогона тестов с Jenkins
+  ![TestOps Allure](src/test/resources/files/testOps2.bmp)
+- [**Визуализация**](https://allure.autotests.cloud/launch/5368) итогов пройденных тестов в Allure TestOps
+  ![TestOps Allure](src/test/resources/files/testOps1.bmp)
+- Автоматически [**загруженные**](https://allure.autotests.cloud/project/279/test-cases?treeId=0) тест-кейсы
+  ![TestOps Allure](src/test/resources/files/testOps3.bmp)
+### Уведомления в Telegram
+Канал "Результаты автотестов для "M2"" [**для уведомлений**](https://t.me/m2m2m2m2m2m2m2m2m2m2m2m2m22m2)
+![Telegram](src/test/resources/files/Telegram.bmp)
