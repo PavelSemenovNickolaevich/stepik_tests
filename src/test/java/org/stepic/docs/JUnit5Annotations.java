@@ -1,4 +1,4 @@
-package cloud.autotests.docs;
+package org.stepic.docs;
 
 import org.junit.jupiter.api.*;
 

@@ -1,6 +1,6 @@
-package cloud.autotests.tests;
+package org.stepic.tests;
 
-import cloud.autotests.helpers.DriverUtils;
+import org.stepic.helpers.DriverUtils;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Description;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
-import static cloud.autotests.helpers.TestData.*;
+import static org.stepic.helpers.TestData.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;

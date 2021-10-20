@@ -1,4 +1,4 @@
-package cloud.autotests.helpers;
+package org.stepic.helpers;
 
 import com.github.javafaker.Faker;
 

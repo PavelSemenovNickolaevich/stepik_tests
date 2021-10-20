@@ -1,4 +1,4 @@
-package cloud.autotests.helpers;
+package org.stepic.helpers;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;

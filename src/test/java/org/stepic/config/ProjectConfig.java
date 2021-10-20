@@ -1,4 +1,4 @@
-package cloud.autotests.config;
+package org.stepic.config;
 
 import org.aeonbits.owner.Config;
 
