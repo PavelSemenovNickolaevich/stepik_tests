@@ -41,7 +41,7 @@ public class GeneratedTests extends TestBase {
         step("Open url 'https://stepik.org/''", () ->
                 open("https://stepik.org/"));
 
-        step("Catalog - Stepik", () -> {
+        step("Catalog · Stepik", () -> {
             String expectedTitle = "Catalog — Stepik";
             String actualTitle = title();
 
@@ -67,6 +67,7 @@ public class GeneratedTests extends TestBase {
         step("Confirm registration", () -> {
             $x("//button[@type='submit']").click();
         });
+        sleep(3000);
         step("Display icon with profile", () -> {
             $x("//button[@aria-label='Profile']").shouldBe(Condition.exist);
         });
@@ -120,6 +121,7 @@ public class GeneratedTests extends TestBase {
         step("Confirmation action", () -> {
             $(byText("OK")).click();
         });
+        sleep(4000);
         step("Display authorization/registration window", () -> {
             $(".sign-form__input-group").shouldBe(Condition.visible);
             $(By.id("ember434")).shouldBe(Condition.visible).shouldBe(Condition.text("Log in"));
