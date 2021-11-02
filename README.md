@@ -55,16 +55,7 @@ IntelliJ IDEA, Java, Selenide, Selenoid, Gradle, JUnit5, Allure SE, Allure TestO
 - [X] - Регистрация пользователя
 - [X] - Logout с ЛК
 
-    
-* browser (default chrome)
-* browserVersion (default 89.0)
-* browserSize (default 1920x1080)
-* browserMobileView (mobile device name, for example iPhone X)
-* remoteDriverUrl (url address from selenoid or grid)
-* videoStorage (url address where you should get video)
-* threads (number of threads)
-
-
+  
 Run tests with filled remote.properties:
 ```bash
 gradle clean test
@@ -90,7 +81,7 @@ gradle clean demowebshop
 ### Видео прохождения тестов, взятое из среды выполнения (из [**Selenoid**](https://selenoid.autotests.cloud/#/))
 ![Selenoid](src/test/resources/files/test.gif)
 
-### Запуск в [**Jenkins**](https://jenkins.autotests.cloud/job/M2%20Tests/build?delay=0sec)
+### Запуск в [**Jenkins**](https://jenkins.autotests.cloud/job/Stepik-tests/build?delay=0sec)
 Удобный и имеющий широкое комьюнити иснтрумент, просто для освоения в виду большого количества учебного материала также удобная настройка pipelines
 Статистика по запускам
 ![Jenkins](src/test/resources/files/Jenkins1.bmp
@@ -113,5 +104,5 @@ gradle clean demowebshop
 - Автоматически [**загруженные**](https://allure.autotests.cloud/project/279/test-cases?treeId=0) тест-кейсы
   ![TestOps Allure](src/test/resources/files/testOps3.bmp)
 ### Уведомления в Telegram
-Канал "Результаты автотестов для "M2"" [**для уведомлений**](https://t.me/m2m2m2m2m2m2m2m2m2m2m2m2m22m2)
+Канал "Результаты автотестов для "M2"" [**для уведомлений**](https://t.me/joinchat/RHJoWcBT6H0wNDky)
 ![Telegram](src/test/resources/files/Telegram.bmp)

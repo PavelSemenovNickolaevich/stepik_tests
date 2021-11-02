@@ -124,7 +124,7 @@ public class GeneratedTests extends TestBase {
         sleep(4000);
         step("Display authorization/registration window", () -> {
             $(".sign-form__input-group").shouldBe(Condition.visible);
-            $(By.id("ember434")).shouldBe(Condition.visible).shouldBe(Condition.text("Log in"));
+            $("a[data-tab-name='login']").shouldBe(Condition.visible).shouldBe(Condition.text("Log in"));
             $x(("//a[@data-tab-name='registration']")).shouldBe(Condition.visible).shouldBe(Condition.text("Register"));
         });
     }
