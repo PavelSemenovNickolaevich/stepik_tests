@@ -77,7 +77,7 @@ allure serve build/allure-results
 ```
 
 ### Видео прохождения тестов, взятое из среды выполнения (из [**Selenoid**](https://selenoid.autotests.cloud/#/))
-![Selenoid](src/test/resources/picture/test1.mp4)
+![Selenoid](src/test/resources/picture/test1.gif)
 
 ### Запуск в [**Jenkins**](https://jenkins.autotests.cloud/job/Stepik-tests/build?delay=0sec)
 Удобный и имеющий широкое комьюнити иснтрумент, просто для освоения в виду большого количества учебного материала также удобная настройка pipelines
