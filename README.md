@@ -1,9 +1,3 @@
-# Project in Allure TestOps with manual & automated tests
-<a target="_blank" href="https://allure.autotests.cloud/project/%s">allure.autotests.cloud/project/%s</a> (ask admin@qa.guru for access)
-
-# Jenkins job
-<a target="_blank" href="https://jenkins.autotests.cloud/job/%s">jenkins.autotests.cloud/job/%s</a>
-
 # Автотесты для [**образовательной платформы Stepik**](https://stepik.org/)
 
 ## Используемые технологии и инструменты
@@ -54,6 +48,7 @@ IntelliJ IDEA, Java, Selenide, Selenoid, Gradle, JUnit5, Allure SE, Allure TestO
 - [X] - Авторизация пользователем
 - [X] - Регистрация пользователя
 - [X] - Logout с ЛК
+
 Так как Jenkins является коммунальным стендом, то часть тестов не проходит из-за нагрузки на сервер.
 Также представлен один "упавший" тест для наглядности
 
