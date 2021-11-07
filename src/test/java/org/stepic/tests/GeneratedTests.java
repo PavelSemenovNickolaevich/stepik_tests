@@ -32,6 +32,7 @@ public class GeneratedTests extends TestBase {
 
             assertThat(consoleLogs).doesNotContain(errorText);
         });
+        sleep(2000);
     }
 
     @Test
@@ -47,6 +48,7 @@ public class GeneratedTests extends TestBase {
 
             assertThat(actualTitle).isEqualTo(expectedTitle);
         });
+        sleep(2000);
     }
 
     @Test()
@@ -71,6 +73,7 @@ public class GeneratedTests extends TestBase {
         step("Display icon with profile", () -> {
             $x("//button[@aria-label='Profile']").shouldBe(Condition.exist);
         });
+        sleep(2000);
     }
 
     @Test()
@@ -93,6 +96,7 @@ public class GeneratedTests extends TestBase {
         step("Display icon with profile", () -> {
             $x("//button[@aria-label='Profile']").shouldBe(Condition.exist);
         });
+        sleep(2000);
     }
 
     @Test()
@@ -127,6 +131,7 @@ public class GeneratedTests extends TestBase {
             $("a[data-tab-name='login']").shouldBe(Condition.visible).shouldBe(Condition.text("Log in"));
             $x(("//a[@data-tab-name='registration']")).shouldBe(Condition.visible).shouldBe(Condition.text("Register"));
         });
+        sleep(2000);
     }
 
     @Test()
@@ -179,6 +184,7 @@ public class GeneratedTests extends TestBase {
                 $(By.id("ember191")).click();
             }
         });
+        sleep(2000);
     }
 
     @Test()
@@ -199,6 +205,7 @@ public class GeneratedTests extends TestBase {
             String text = String.format("Легкий старт в %s. Вводный курс для чайников", javaWord);
             $$(".course-card__title").get(0).shouldHave(Condition.text(text));
         });
+        sleep(2000);
     }
 
     @Test()
@@ -230,6 +237,7 @@ public class GeneratedTests extends TestBase {
             Assertions.assertEquals("This course issues a certificate", certificate);
             Assertions.assertEquals("Free", price);
         });
+        sleep(2000);
     }
 
 
