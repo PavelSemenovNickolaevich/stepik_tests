@@ -43,7 +43,7 @@ public class GeneratedTests extends TestBase {
                 open("https://stepik.org/"));
 
         step("Catalog · Stepik", () -> {
-            String expectedTitle = "Catalog — Stepik";
+            String expectedTitle = "Catalog · Stepik";
             String actualTitle = title();
 
             assertThat(actualTitle).isEqualTo(expectedTitle);
@@ -202,7 +202,7 @@ public class GeneratedTests extends TestBase {
         step(" results with 'Java' are exist and visible and the first result contains Java", () -> {
             $$(".course-cards__item").shouldHave(CollectionCondition.sizeGreaterThan(0));
             String javaWord = "Java";
-            String text = String.format("Легкий старт в %s. Вводный курс для чайников", javaWord);
+            String text = String.format("%s. Functional Programming", javaWord);
             $$(".course-card__title").get(0).shouldHave(Condition.text(text));
         });
         sleep(2000);

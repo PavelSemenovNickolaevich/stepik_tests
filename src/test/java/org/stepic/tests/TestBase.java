@@ -25,10 +25,10 @@ public class TestBase {
     public void addAttachments() {
         String sessionId = DriverUtils.getSessionId();
 
-        AllureAttachments.addScreenshotAs("Last screenshot");
-        AllureAttachments.addPageSource();
+        AllureAttachments.screenshotAs("Last screenshot");
+        AllureAttachments.pageSource();
 //        AllureAttachments.attachNetwork(); // todo
-        AllureAttachments.addBrowserConsoleLogs();
+        AllureAttachments.browserConsoleLogs();
 
         Selenide.closeWebDriver();
 
