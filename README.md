@@ -49,10 +49,7 @@ IntelliJ IDEA, Java, Selenide, Selenoid, Gradle, JUnit5, Allure SE, Allure TestO
 - [X] - Регистрация пользователя
 - [X] - Logout с ЛК
 
-Так как Jenkins является коммунальным стендом, то часть тестов не проходит из-за нагрузки на сервер.
-Также представлен один "упавший" тест для наглядности
-
-
+  
 ### Команда для запуска из терминала
 Локально должны быть заданы параметры в local.properties, app.properties
 
@@ -80,15 +77,15 @@ allure serve build/allure-results
 ![Selenoid](src/test/resources/picture/test1.gif)
 
 ### Запуск в [**Jenkins**](https://jenkins.autotests.cloud/job/Stepik-tests/build?delay=0sec)
-Удобный и имеющий широкое комьюнити иснтрумент, просто для освоения в виду большого количества учебного материала также удобная настройка pipelines
+Удобный и имеющий широкое комьюнити инструмент, просто для освоения ввиду большого количества учебного материала также удобная настройка pipelines
 Статистика по запускам
 ![Jenkins](src/test/resources/picture/jenkisOne.png)
 Указание параметров для запуска
 ![Jenkins](src/test/resources/picture/jenkinsTwo.png)
 
 ### Отчёт в Allure Report
-Инструмент, не нуждающийся в представлении и мгновенно завоеваший популярность против автоматически генерирующихся отчетов с тестовых фреймворков Junit4,5 и TestNG
-![Allure](src/test/resources/picture/AllureReport.png)
+Инструмент, не нуждающийся в представлении и мгновенно завоевавший популярность против автоматически генерирующихся отчетов с тестовых фреймворков Junit4,5 и TestNG
+![Allure](src/test/resources/picture/Allure.png)
 
 ### Интеграция с TMS TestOps Allure
 Удобная интеграция с Test Management System  Allure TestOps (ранее Allure EE), где есть возможность
