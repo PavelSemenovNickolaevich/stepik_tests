@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
+import static com.codeborne.selenide.Condition.visible;
 import static org.stepic.helpers.TestData.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -32,7 +33,6 @@ public class GeneratedTests extends TestBase {
 
             assertThat(consoleLogs).doesNotContain(errorText);
         });
-        sleep(2000);
     }
 
     @Test
@@ -48,7 +48,6 @@ public class GeneratedTests extends TestBase {
 
             assertThat(actualTitle).isEqualTo(expectedTitle);
         });
-        sleep(2000);
     }
 
     @Test()
@@ -59,7 +58,7 @@ public class GeneratedTests extends TestBase {
             open("https://stepik.org/");
         });
         step("Press button 'Register'", () -> {
-            $(By.id("ember193")).click();
+            $(By.cssSelector(".navbar__auth_reg")).click();
         });
         step("Fill the field: name, email, password", () -> {
             $(By.id("id_registration_full-name")).setValue(generateName);
@@ -69,11 +68,9 @@ public class GeneratedTests extends TestBase {
         step("Confirm registration", () -> {
             $x("//button[@type='submit']").click();
         });
-        sleep(3000);
         step("Display icon with profile", () -> {
             $x("//button[@aria-label='Profile']").shouldBe(Condition.exist);
         });
-        sleep(2000);
     }
 
     @Test()
@@ -96,7 +93,6 @@ public class GeneratedTests extends TestBase {
         step("Display icon with profile", () -> {
             $x("//button[@aria-label='Profile']").shouldBe(Condition.exist);
         });
-        sleep(2000);
     }
 
     @Test()
@@ -125,16 +121,66 @@ public class GeneratedTests extends TestBase {
         step("Confirmation action", () -> {
             $(byText("OK")).click();
         });
-        sleep(4000);
         step("Display authorization/registration window", () -> {
-            $(".sign-form__input-group").shouldBe(Condition.visible);
-            $("a[data-tab-name='login']").shouldBe(Condition.visible).shouldBe(Condition.text("Log in"));
-            $x(("//a[@data-tab-name='registration']")).shouldBe(Condition.visible).shouldBe(Condition.text("Register"));
+            $(".sign-form__input-group").shouldBe(visible);
+            $("a[data-tab-name='login']").shouldBe(visible).shouldBe(Condition.text("Log in"));
+            $x(("//a[@data-tab-name='registration']")).shouldBe(visible).shouldBe(Condition.text("Register"));
         });
-        sleep(2000);
     }
 
-    @Test()
+//    @Test()
+//    @Description("Interface should be changed by different languages")
+//    @DisplayName("Change language interface")
+//    void shouldChangeLanguageInterface() {
+//        step("open 'https://stepik.org/'", () -> {
+//            open("https://stepik.org/");
+//        });
+//        step("Press button languages", () -> {
+//            $(By.id("ember191")).click();
+//            int i = 0;
+//            while (i < $$x("//li[@class='menu-item']").size()) {
+//                $$x("//li[@class='menu-item']").get(i).click();
+//                switch (i) {
+//                    case 0:
+//                        String placeholderBe = $x("//input[@placeholder='Пошук…']").getAttribute("placeholder");
+//                        assertThat(placeholderBe).isEqualTo("Пошук…");
+//                        break;
+//                    case 1:
+//                        String placeholderDe = $x("//input[@placeholder='Suchen']").getAttribute("placeholder");
+//                        assertThat(placeholderDe).isEqualTo("Suchen");
+//                        break;
+//                    case 2:
+//                        String placeholderEn = $x("//input[@placeholder='Search']").getAttribute("placeholder");
+//                        assertThat(placeholderEn).isEqualTo("Search");
+//                        break;
+//                    case 3:
+//                        String placeholderEs = $x("//input[@placeholder='Escribe para buscar']").getAttribute("placeholder");
+//                        assertThat(placeholderEs).isEqualTo("Escribe para buscar");
+//                        break;
+//                    case 4:
+//                        String placeholderPt = $x("//input[@placeholder='Procurar']").getAttribute("placeholder");
+//                        assertThat(placeholderPt).isEqualTo("Procurar");
+//                        break;
+//                    case 5:
+//                        String placeholderRu = $x("//input[@placeholder='Поиск…']").getAttribute("placeholder");
+//                        assertThat(placeholderRu).isEqualTo("Поиск…");
+//                        break;
+//                    case 6:
+//                        String placeholderUk = $x("//input[@placeholder='Пошук...']").getAttribute("placeholder");
+//                        assertThat(placeholderUk).isEqualTo("Пошук...");
+//                        break;
+//                    case 7:
+//                        String placeholderZh = $x("//input[@placeholder='键入要搜索']").getAttribute("placeholder");
+//                        assertThat(placeholderZh).isEqualTo("键入要搜索");
+//                        break;
+//                }
+//                i++;
+//                $(By.id("ember191")).click();
+//            }
+//        });
+//    }
+
+    @Test
     @Description("Interface should be changed by different languages")
     @DisplayName("Change language interface")
     void shouldChangeLanguageInterface() {
@@ -143,49 +189,12 @@ public class GeneratedTests extends TestBase {
         });
         step("Press button languages", () -> {
             $(By.id("ember191")).click();
-            int i = 0;
-            while (i < $$x("//li[@class='menu-item']").size()) {
-                $$x("//li[@class='menu-item']").get(i).click();
-                switch (i) {
-                    case 0:
-                        String placeholderBe = $x("//input[@placeholder='Пошук…']").getAttribute("placeholder");
-                        assertThat(placeholderBe).isEqualTo("Пошук…");
-                        break;
-                    case 1:
-                        String placeholderDe = $x("//input[@placeholder='Suchen']").getAttribute("placeholder");
-                        assertThat(placeholderDe).isEqualTo("Suchen");
-                        break;
-                    case 2:
-                        String placeholderEn = $x("//input[@placeholder='Search']").getAttribute("placeholder");
-                        assertThat(placeholderEn).isEqualTo("Search");
-                        break;
-                    case 3:
-                        String placeholderEs = $x("//input[@placeholder='Escribe para buscar']").getAttribute("placeholder");
-                        assertThat(placeholderEs).isEqualTo("Escribe para buscar");
-                        break;
-                    case 4:
-                        String placeholderPt = $x("//input[@placeholder='Procurar']").getAttribute("placeholder");
-                        assertThat(placeholderPt).isEqualTo("Procurar");
-                        break;
-                    case 5:
-                        String placeholderRu = $x("//input[@placeholder='Поиск…']").getAttribute("placeholder");
-                        assertThat(placeholderRu).isEqualTo("Поиск…");
-                        break;
-                    case 6:
-                        String placeholderUk = $x("//input[@placeholder='Пошук...']").getAttribute("placeholder");
-                        assertThat(placeholderUk).isEqualTo("Пошук...");
-                        break;
-                    case 7:
-                        String placeholderZh = $x("//input[@placeholder='键入要搜索']").getAttribute("placeholder");
-                        assertThat(placeholderZh).isEqualTo("键入要搜索");
-                        break;
-                }
-                i++;
-                $(By.id("ember191")).click();
-            }
+            $$x("//li[@class='menu-item']").get(0).click();
+            String placeholderBe = $x("//input[@placeholder='Пошук…']").getAttribute("placeholder");
+            assertThat(placeholderBe).isEqualTo("Пошук…");
         });
-        sleep(2000);
     }
+
 
     @Test()
     @Description("User should find results")
@@ -205,7 +214,6 @@ public class GeneratedTests extends TestBase {
             String text = String.format("%s. Functional Programming", javaWord);
             $$(".course-card__title").get(0).shouldHave(Condition.text(text));
         });
-        sleep(2000);
     }
 
     @Test()
@@ -217,6 +225,7 @@ public class GeneratedTests extends TestBase {
         });
         step("Choose filters: english language, with cert and Free", () -> {
             $(".search-form__input ").setValue("Java");
+            //     $(tableSystemInfoBy).waitUntil(visible, 30000);
             $(".search-form__input ").sendKeys(Keys.ENTER);
             $(".select-box__toggle-btn").click();
             $$(".select-box__option").get(1).click();
@@ -237,8 +246,5 @@ public class GeneratedTests extends TestBase {
             Assertions.assertEquals("This course issues a certificate", certificate);
             Assertions.assertEquals("Free", price);
         });
-        sleep(2000);
     }
-
-
 }
