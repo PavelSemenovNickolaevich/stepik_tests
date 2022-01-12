@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static org.stepic.helpers.TestData.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -38,12 +38,14 @@ public class GeneratedTests extends TestBase {
     @Test
     @Description("Page title should have header text")
     @DisplayName("Page title test")
-    void titleTest() {
-        step("Open url 'https://stepik.org/''", () ->
-                open("https://stepik.org/"));
-
+    void titleTest() throws InterruptedException {
+        step("Open url 'https://stepik.org/''", () -> {
+            open("https://stepik.org/");
+            setEnglishLanguage();
+        });
         step("Catalog · Stepik", () -> {
             String expectedTitle = "Catalog · Stepik";
+            sleep(1000);
             String actualTitle = title();
 
             assertThat(actualTitle).isEqualTo(expectedTitle);
@@ -79,9 +81,10 @@ public class GeneratedTests extends TestBase {
     void authorizationTest() {
         step("open 'https://stepik.org/'", () -> {
             open("https://stepik.org/");
+            setEnglishLanguage();
         });
         step("Press button 'Log In'", () -> {
-            $(By.id("ember192")).click();
+            $(".navbar__auth_login").click();
         });
         step("Fill the field: name, email, password", () -> {
             $(By.id("id_login_email")).setValue("Terminator666@gmail.com");
@@ -101,13 +104,14 @@ public class GeneratedTests extends TestBase {
     void shouldLogOutTest() {
         step("open 'https://stepik.org/'", () -> {
             open("https://stepik.org/");
+            setEnglishLanguage();
         });
         step("Press button 'Log In'", () -> {
-            $(By.id("ember192")).click();
+            $(".navbar__auth_login").click();
         });
         step("Fill the field: name, email, password", () -> {
-            $(By.id("id_login_email")).setValue("Terminator666@gmail.com");
-            $(By.id("id_login_password")).setValue("terminator666");
+            $x("//input[@id='id_login_email']").setValue("Terminator666@gmail.com");
+            $x("//input[@id='id_login_password']").setValue("terminator666");
         });
         step("Confirm authorization", () -> {
             $x("//button[@type='submit']").click();
@@ -123,8 +127,8 @@ public class GeneratedTests extends TestBase {
         });
         step("Display authorization/registration window", () -> {
             $(".sign-form__input-group").shouldBe(visible);
-            $("a[data-tab-name='login']").shouldBe(visible).shouldBe(Condition.text("Log in"));
-            $x(("//a[@data-tab-name='registration']")).shouldBe(visible).shouldBe(Condition.text("Register"));
+            $("a[data-tab-name='login']").shouldBe(visible).shouldBe(Condition.text("Войти"));
+            $x(("//a[@data-tab-name='registration']")).shouldBe(visible).shouldBe(Condition.text("Регистрация"));
         });
     }
 
@@ -186,9 +190,10 @@ public class GeneratedTests extends TestBase {
     void shouldChangeLanguageInterface() {
         step("open 'https://stepik.org/'", () -> {
             open("https://stepik.org/");
+
         });
         step("Press button languages", () -> {
-            $(By.id("ember191")).click();
+            $(".navbar__down-arrow").click();
             $$x("//li[@class='menu-item']").get(0).click();
             String placeholderBe = $x("//input[@placeholder='Пошук…']").getAttribute("placeholder");
             assertThat(placeholderBe).isEqualTo("Пошук…");
@@ -222,6 +227,7 @@ public class GeneratedTests extends TestBase {
     void shouldFindResultsByFilters() {
         step("open 'https://stepik.org/'", () -> {
             open("https://stepik.org/");
+            setEnglishLanguage();
         });
         step("Choose filters: english language, with cert and Free", () -> {
             $(".search-form__input ").setValue("Java");

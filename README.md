@@ -5,34 +5,34 @@
 <a href="https://www.jetbrains.com/idea/">
     <img src="https://starchenkov.pro/qa-guru/img/skills/Intelij_IDEA.svg" width="40" height="40"  alt="IDEA"/>
 </a>
-<a href="https://www.jetbrains.com/idea/">
+<a href="https://www.java.com/">
     <img src="https://starchenkov.pro/qa-guru/img/skills/Java.svg" width="40" height="40"  alt="Java"/>
 </a>
-<a href="https://www.jetbrains.com/idea/">
-    <img src="https://starchenkov.pro/qa-guru/img/skills/Selenide.svg" width="40" height="40"  alt="Seleide"/>
+<a href="https://ru.selenide.org/">
+    <img src="https://starchenkov.pro/qa-guru/img/skills/Selenide.svg" width="40" height="40"  alt="Selenide"/>
 </a>
-<a href="https://www.jetbrains.com/idea/">
+<a href="https://aerokube.com/">
     <img src="https://starchenkov.pro/qa-guru/img/skills/Selenoid.svg" width="40" height="40"  alt="Selenoid"/>
 </a>
-<a href="https://www.jetbrains.com/idea/">
+<a href="https://gradle.org/">
     <img src="https://starchenkov.pro/qa-guru/img/skills/Gradle.svg" width="40" height="40"  alt="Gradle"/>
 </a>
-<a href="https://www.jetbrains.com/idea/">
+<a href="https://junit.org/junit5/docs/current/user-guide/">
     <img src="https://starchenkov.pro/qa-guru/img/skills/JUnit5.svg" width="40" height="40"  alt="JUnit 5"/>
 </a>
-<a href="https://www.jetbrains.com/idea/">
+<a href="https://allure.qatools.ru/">
     <img src="https://starchenkov.pro/qa-guru/img/skills/Allure_Report.svg" width="40" height="40"  alt="Allure SE"/>
 </a>
-<a href="https://www.jetbrains.com/idea/">
+<a href="https://qameta.io/">
     <img src="https://starchenkov.pro/qa-guru/img/skills/Allure_EE.svg" width="40" height="40"  alt="Allure EE"/>
 </a>
-<a href="https://www.jetbrains.com/idea/">
+<a href="https://github.com/PavelSemenovNickolaevich">
     <img src="https://starchenkov.pro/qa-guru/img/skills/Github.svg" width="40" height="40"  alt="Github"/>
 </a>
-<a href="https://www.jetbrains.com/idea/">
+<a href="https://www.jenkins.io/">
     <img src="https://starchenkov.pro/qa-guru/img/skills/Jenkins.svg" width="40" height="40"  alt="Jenkins"/>
 </a>
-<a href="https://www.jetbrains.com/idea/">
+<a href="https://web.telegram.org/k/">
     <img src="https://starchenkov.pro/qa-guru/img/skills/Telegram.svg" width="40" height="40"  alt="Telegram"/>
 </a>
 
