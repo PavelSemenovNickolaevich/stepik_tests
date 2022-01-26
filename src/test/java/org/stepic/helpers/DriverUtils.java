@@ -1,12 +1,12 @@
 package org.stepic.helpers;
 
-import org.stepic.config.Project;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.stepic.config.Project;
 
 import java.net.MalformedURLException;
 import java.net.URL;

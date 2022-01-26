@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  selenium:
+    image: selenium/standalone-chrome:3.141.59
+    container_name: selenium_server_works
+    ports:
+      - "8080:8080"
+    logging:
+      driver: none
+
+  test_runner:
+    build: test
+    #      context: ../src/test/java/qa/guru/restbackend/TicketsControllerTest.java
+    #      dockerfile: test
+    image: tests_run
+    container_name: tests_works
+    network_mode: "host"

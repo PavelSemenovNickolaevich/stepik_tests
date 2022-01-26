@@ -1,6 +1,5 @@
 package org.stepic.tests;
 
-import org.stepic.helpers.DriverUtils;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Description;
@@ -9,13 +8,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.stepic.helpers.DriverUtils;
 
-import static com.codeborne.selenide.Condition.*;
-import static org.stepic.helpers.TestData.*;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.openqa.selenium.By.id;
+import static org.stepic.helpers.TestData.*;
 
 
 public class GeneratedTests extends TestBase {
@@ -39,7 +40,7 @@ public class GeneratedTests extends TestBase {
     @Description("Page title should have header text")
     @DisplayName("Page title test")
     void titleTest() throws InterruptedException {
-        step("Open url 'https://stepik.org/''", () -> {
+        step("Open url 'https://stepik.org/'", () -> {
             open("https://stepik.org/");
             setEnglishLanguage();
         });
@@ -56,22 +57,22 @@ public class GeneratedTests extends TestBase {
     @Description("New user should be registered")
     @DisplayName("Registration test")
     void shouldRegistrationTest() {
-        step("open 'https://stepik.org/'", () -> {
+        step("Open 'https://stepik.org/'", () -> {
             open("https://stepik.org/");
         });
         step("Press button 'Register'", () -> {
             $(By.cssSelector(".navbar__auth_reg")).click();
         });
         step("Fill the field: name, email, password", () -> {
-            $(By.id("id_registration_full-name")).setValue(generateName);
-            $(By.id("id_registration_email")).setValue(generateEmail);
-            $(By.id("id_registration_password")).setValue(generatePassword);
+            $(id("id_registration_full-name")).setValue(generateName);
+            $(id("id_registration_email")).setValue(generateEmail);
+            $(id("id_registration_password")).setValue(generatePassword);
         });
         step("Confirm registration", () -> {
             $x("//button[@type='submit']").click();
         });
         step("Display icon with profile", () -> {
-            $x("//button[@aria-label='Profile']").shouldBe(Condition.exist);
+            $x("//button[@aria-label='Profile']").shouldHave(Condition.exist);
         });
     }
 
@@ -79,7 +80,7 @@ public class GeneratedTests extends TestBase {
     @Description("User should be authorized")
     @DisplayName("Authorization test")
     void authorizationTest() {
-        step("open 'https://stepik.org/'", () -> {
+        step("Open 'https://stepik.org/'", () -> {
             open("https://stepik.org/");
             setEnglishLanguage();
         });
@@ -87,14 +88,14 @@ public class GeneratedTests extends TestBase {
             $(".navbar__auth_login").click();
         });
         step("Fill the field: name, email, password", () -> {
-            $(By.id("id_login_email")).setValue("Terminator666@gmail.com");
-            $(By.id("id_login_password")).setValue("terminator666");
+            $(id("id_login_email")).setValue("Terminator666@gmail.com");
+            $(id("id_login_password")).setValue("terminator666");
         });
         step("Confirm authorization", () -> {
             $x("//button[@type='submit']").click();
         });
         step("Display icon with profile", () -> {
-            $x("//button[@aria-label='Profile']").shouldBe(Condition.exist);
+            $x("//button[@aria-label='Profile']").shouldHave(Condition.exist);
         });
     }
 
@@ -102,7 +103,7 @@ public class GeneratedTests extends TestBase {
     @Description("User should logout")
     @DisplayName("Logout test")
     void shouldLogOutTest() {
-        step("open 'https://stepik.org/'", () -> {
+        step("Open 'https://stepik.org/'", () -> {
             open("https://stepik.org/");
             setEnglishLanguage();
         });
@@ -127,8 +128,8 @@ public class GeneratedTests extends TestBase {
         });
         step("Display authorization/registration window", () -> {
             $(".sign-form__input-group").shouldBe(visible);
-            $("a[data-tab-name='login']").shouldBe(visible).shouldBe(Condition.text("Войти"));
-            $x(("//a[@data-tab-name='registration']")).shouldBe(visible).shouldBe(Condition.text("Регистрация"));
+            $("a[data-tab-name='login']").shouldBe(visible).shouldHave(Condition.text("Войти"));
+            $x(("//a[@data-tab-name='registration']")).shouldBe(visible).shouldHave(Condition.text("Регистрация"));
         });
     }
 
@@ -188,7 +189,7 @@ public class GeneratedTests extends TestBase {
     @Description("Interface should be changed by different languages")
     @DisplayName("Change language interface")
     void shouldChangeLanguageInterface() {
-        step("open 'https://stepik.org/'", () -> {
+        step("Open 'https://stepik.org/'", () -> {
             open("https://stepik.org/");
 
         });
@@ -205,7 +206,7 @@ public class GeneratedTests extends TestBase {
     @Description("User should find results")
     @DisplayName("Search field")
     void shouldFindResultsFromSearch() {
-        step("open 'https://stepik.org/'", () -> {
+        step("Open 'https://stepik.org/'", () -> {
             open("https://stepik.org/");
         });
         step("Input 'Java' in search field", () -> {
@@ -217,7 +218,7 @@ public class GeneratedTests extends TestBase {
             $$(".course-cards__item").shouldHave(CollectionCondition.sizeGreaterThan(0));
             String javaWord = "Java";
             String text = String.format("%s. Functional Programming", javaWord);
-            $$(".course-card__title").get(0).shouldHave(Condition.text(text));
+            $(".course-card__title", 0).shouldHave(Condition.text(text));
         });
     }
 
@@ -225,7 +226,7 @@ public class GeneratedTests extends TestBase {
     @Description("User should find results by filters")
     @DisplayName("Search results by filters")
     void shouldFindResultsByFilters() {
-        step("open 'https://stepik.org/'", () -> {
+        step("Open 'https://stepik.org/'", () -> {
             open("https://stepik.org/");
             setEnglishLanguage();
         });
@@ -234,7 +235,7 @@ public class GeneratedTests extends TestBase {
             //     $(tableSystemInfoBy).waitUntil(visible, 30000);
             $(".search-form__input ").sendKeys(Keys.ENTER);
             $(".select-box__toggle-btn").click();
-            $$(".select-box__option").get(1).click();
+            $(".select-box__option", 1).click();
             $(byText("With certificate")).click();
             $(byText("Free")).click();
         });
@@ -245,10 +246,10 @@ public class GeneratedTests extends TestBase {
             $$(".course-cards__item").shouldHave(CollectionCondition.sizeGreaterThan(0));
             String javaWord = "Java";
             String text = String.format("%s. Базовый курс", javaWord);
-            $$(".course-card__title").get(0).shouldHave(Condition.text(text));
+            $(".course-card__title", 0).shouldHave(Condition.text(text));
             String certificate = $x("//div[@class='course-card__widgets'][1]//span[@data-type='certificate']")
                     .getAttribute("aria-label");
-            String price = $$(".format-price_free").get(0).getText();
+            String price = $(".format-price_free", 0).getText();
             Assertions.assertEquals("This course issues a certificate", certificate);
             Assertions.assertEquals("Free", price);
         });

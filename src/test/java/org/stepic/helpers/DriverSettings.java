@@ -1,9 +1,9 @@
 package org.stepic.helpers;
 
-import org.stepic.config.Project;
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.stepic.config.Project;
 
 import java.util.HashMap;
 import java.util.Map;

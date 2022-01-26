@@ -23,9 +23,9 @@ public class TestBase {
         DriverSettings.configure();
     }
 
-     public void setEnglishLanguage() {
+    public void setEnglishLanguage() {
         $(".navbar__down-arrow").click();
-         $$x("//li[@class='menu-item']").get(2).shouldBe(Condition.exist);
+        $$x("//li[@class='menu-item']").get(2).shouldBe(Condition.exist);
         $$x("//li[@class='menu-item']").get(2).click();
     }
 
